@@ -6,5 +6,12 @@ Database - ContainerTransport
 
 Kaggle - bankMarketingResponsePredict
  - Model to predict if a client will subscribe to a term deposit based on data from a direct marketing campaign of a Portuguese banking institution.
+ - Binary classification
  - Baseline model: Logistic regression
  - Advanced model: Nural network (sklearn.neural_network.MLPClassifier)
+<br/>
+
+Kaggle - countingStars
+ - School exercise
+ - Binary classification with Logistic regression
+ - Placed 9/69 on leaderboard
