@@ -10,12 +10,6 @@ Kaggle - bankMarketingResponsePredict
  - Baseline model: Logistic regression.
  - Advanced model: Nural network (sklearn.neural_network.MLPClassifier).
 <br/>
-
-Kaggle - countingStars
- - School exercise.
- - Binary classification with Logistic regression.
- - Placed 9/69 on leaderboard.
- <br/>
  
  Kaggle - NLPDisasterTweets
  - Model to predict the reliability of twitter post about nearby disasters.
