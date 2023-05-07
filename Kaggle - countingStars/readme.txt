@@ -1,1 +1,0 @@
-Kaggle link: https://www.kaggle.com/competitions/ds2023-counting-stars/leaderboard
