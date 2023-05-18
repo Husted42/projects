@@ -4,7 +4,7 @@ library(tidyverse)
 
 #Denmark Norway and Sweden
 #GDP per capita (current US$) - https://data.worldbank.org/indicator/NY.GDP.PCAP.CD
-df_original <- read.csv('path/data/API_NY.GDP.PCAP.CD_DS2_en_csv_v2_5447781.csv', 
+df_original <- read.csv('C:/C/gitHub/code/R/visual/data/API_NY.GDP.PCAP.CD_DS2_en_csv_v2_5447781.csv', 
                         header = TRUE, sep = ',', na.strings = c("NA"))
 df_original
 
@@ -43,3 +43,18 @@ df %>%
        color = "Country") +
   scale_x_continuous(breaks = seq(min(df$year), max(df$year), by = 1)) +
   theme_light()
+
+###### -- Correlation -- #####
+cor(df_clean$year, df_clean$Denmark) #Correlation between x and y
+cor(df_clean$year, df_clean$Norway)
+cor(df_clean$year, df_clean$Sweden)
+
+
+##### - Linear Regression - ####
+model <- lm(Denmark ~ year, data = df_clean)
+summary(model)
+
+#Prediction
+year2026 <- data.frame(year = 2026)
+predicted_gdp <- predict(model, newdata = year2026)
+print(predicted_gdp)
