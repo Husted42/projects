@@ -10,3 +10,9 @@ Kaggle - bankMarketingResponsePredict
  - Model to predict the reliability of twitter post about nearby disasters.
  - Binary calssification with Support Vector classification.
  - CountVectorizer and TF-IDF for word Embedding.
+<br/>
+
+ Visual - visualisations
+ - Power BI
+ - R
+
