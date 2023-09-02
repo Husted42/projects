@@ -59,25 +59,10 @@ SELECT Product.manufacturer FROM Product WHERE Product.model IN(
 	SELECT Accessory.model FROM Accessory WHERE Accessory.type = 'mouse')
 GROUP BY Product.manufacturer HAVING COUNT(Product.manufacturer) > 1;
 
--- 11) Create a view of sales that include prices
-DROP VIEW IF EXISTS salesOverview; 
-CREATE VIEW salesOverview AS
-SELECT Sales.model, Sales.orderDate, Product.type, Product.manufacturer,
-CONCAT(PC.name, Laptop.name, Mouse.name, Keyboard.name) AS name,
-CAST(CONCAT(PC.price, Laptop.price, Accessory.price) AS integer) AS price
-FROM Sales
-LEFT JOIN PC ON Sales.model = PC.model
-LEFT JOIN Laptop ON Sales.model = Laptop.model
-LEFT JOIN Mouse ON Sales.model = Mouse.model
-LEFT JOIN Keyboard ON Sales.model = Keyboard.model
-LEFT JOIN Accessory ON Sales.model = Accessory.model
-LEFT JOIN Product ON Sales.model = Product.model
-ORDER BY orderDate DESC;
-
--- 12) Which type of product sells best?
+-- 11) Which type of product sells best?
 SELECT type, COUNT(type), SUM(price) FROM salesOverview
 GROUP BY type;
 
--- 13) How did the different PC's sell?
+-- 12) How did the different PC's sell?
 SELECT Concat(manufacturer, ' ', name) AS modelName, COUNT(name) AS count, SUM(price) AS sum FROM salesOverview
 WHERE type = 'pc' GROUP BY modelName ORDER BY sum DESC;
