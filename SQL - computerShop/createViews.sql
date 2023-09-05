@@ -92,3 +92,5 @@ RAISE NOTICE '% % %', basisAccessory, basisLaptop, basisPC;
 END $$;
 
 SELECT * FROM soldByYearAndType;
+
+----) Information
